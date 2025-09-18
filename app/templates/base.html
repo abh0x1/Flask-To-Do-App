@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}To-Do App{% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="min-h-screen bg-gradient-to-br from-black via-gray-900 to-green-900 text-white font-sans flex flex-col">
 
     <!-- Header -->
@@ -17,11 +19,13 @@
                 <a href="{{ url_for('admin.admin_login') }}">Admin</a>
 
                 {% if 'username' not in session %}
-                    <a href="{{ url_for('auth.login') }}" class="text-gray-300 hover:text-green-400 transition">Login</a>
-                    <a href="{{ url_for('auth.register') }}" class="text-gray-300 hover:text-green-400 transition">Register</a>
+                <a href="{{ url_for('auth.login') }}" class="text-gray-300 hover:text-green-400 transition">Login</a>
+                <a href="{{ url_for('auth.register') }}"
+                    class="text-gray-300 hover:text-green-400 transition">Register</a>
                 {% else %}
-                    <a href="{{ url_for('tasks.view_tasks') }}" class="text-gray-300 hover:text-green-400 transition">Tasks</a>
-                    <a href="{{ url_for('auth.logout') }}" class="text-gray-300 hover:text-red-400 transition">Logout</a>
+                <a href="{{ url_for('tasks.view_tasks') }}"
+                    class="text-gray-300 hover:text-green-400 transition">Tasks</a>
+                <a href="{{ url_for('auth.logout') }}" class="text-gray-300 hover:text-red-400 transition">Logout</a>
                 {% endif %}
             </nav>
         </div>
@@ -30,19 +34,19 @@
     <!-- Main Content -->
     <main class="flex-grow container mx-auto px-6 py-8">
         {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <div class="space-y-4 mb-6">
-                    {% for category, message in messages %}
-                        <div class="p-4 rounded-lg text-white 
+        {% if messages %}
+        <div class="space-y-4 mb-6">
+            {% for category, message in messages %}
+            <div class="p-4 rounded-lg text-white 
                             {% if category == 'success' %} bg-green-700 
                             {% elif category == 'danger' %} bg-red-700 
                             {% elif category == 'info' %} bg-blue-700 
                             {% else %} bg-gray-700 {% endif %}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
         {% endwith %}
 
         {% block content %}{% endblock %}
@@ -50,8 +54,9 @@
 
     <!-- Footer -->
     <footer class="bg-gradient-to-r from-black to-green-900 py-4 text-center text-gray-400 text-sm">
-        <p>&copy; 2025 My Flask To-Do App</p>
+        <p>&copy; 2025 My Flask To-Do App ~ AbhishekK</p>
     </footer>
 
 </body>
+
 </html>
