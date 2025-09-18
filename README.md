@@ -46,7 +46,7 @@ Users can manage tasks efficiently, while admins have full control over user man
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/<your-username>/ToDo_Flask_App.git
+git clone https://github.com/abh0x1/Flask-To-Do-App.git
 cd ToDo_Flask_App
 ````
 
