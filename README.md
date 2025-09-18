@@ -1,5 +1,5 @@
 
-# ✅ Flask To-Do Application with Admin Panel
+# Flask To-Do Application with Admin Panel
 
 A simple **To-Do App** built using Flask and SQLAlchemy.  
 Users can manage tasks efficiently, while admins have full control over user management.
